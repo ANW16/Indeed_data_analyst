@@ -14,7 +14,7 @@ Answer = XTO Land Data Analyst
 
 SELECT COUNT (*)
 FROM data_analyst_jobs
-WHERE location = 'KY' OR location = 'TN'
+WHERE location = 'KY' OR location = 'TN';
 
  a. Answer = 20
  b. Answer = 27
@@ -22,14 +22,14 @@ WHERE location = 'KY' OR location = 'TN'
  
 SELECT COUNT (*)
 FROM data_analyst_jobs
-WHERE location = 'TN' AND star_rating >4
+WHERE location = 'TN' AND star_rating >4;
 
 Answer = 3
 
 
 SELECT COUNT (*)
 FROM data_analyst_jobs
-WHERE review_count >500 AND review_count <1000
+WHERE review_count >500 AND review_count <1000;
 
 Answer = 150
 
@@ -38,7 +38,7 @@ Answer = 150
 SELECT location, AVG(star_rating) AS avg_rating
 FROM data_analyst_jobs
 GROUP BY location
-ORDER BY avg_rating DESC
+ORDER BY avg_rating DESC;
 
 Answer = NE or Nebraska
 
@@ -52,14 +52,14 @@ Answer = 881
 
 SELECT COUNT (DISTINCT title)
 FROM data_analyst_jobs
-WHERE location = 'CA'
+WHERE location = 'CA';
 
 ANSWER = 230
 
 
 SELECT COUNT(company), AVG(star_rating) AS avg_rating
 FROM data_analyst_jobs
-WHERE review_count >5000
+WHERE review_count >5000;
 
 Answer = 184
 
@@ -68,11 +68,34 @@ SELECT company, AVG(star_rating) AS avg_rating
 FROM data_analyst_jobs
 WHERE review_count >5000
 GROUP BY company
-ORDER BY avg_rating DESC
+ORDER BY avg_rating DESC;
 
  a. Answer = General Motors
  b. Answer = 4.1999998090000000
- */
  
  
+ SELECT COUNT(DISTINCT title)
+ FROM data_analyst_jobs
+ WHERE title LIKE '%Analyst%';
+ 
+ Answer = 754
+ 
+ 
+ SELECT COUNT(DISTINCT title)
+ FROM data_analyst_jobs
+ WHERE title NOT LIKE '%Analyst%'
+ AND title NOT LIKE '%Analytics%';
+ 
+a. Answer = 26
+b. Answer = Data
+*/
+
+SELECT *
+FROM data_analyst_jobs
+WHERE skill LIKE '%SQL%'
+AND days_since_posting >21
+AND domain NOT LIKE '%null%'
+
+
+
  
